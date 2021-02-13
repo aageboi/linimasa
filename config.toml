@@ -1,3 +1,58 @@
-baseURL = "http://example.org/"
+baseURL = "http://localhost:1313/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Indonesia Linimasa"
+theme = "ramium"
+
+disqusShortname = ""
+googleAnalytics = ""
+pluralizeListTitles = false
+enableemoji = false
+
+[params]
+    description = "Linimasa peristiwa di Indonesia"
+    googleSearch = ""
+    showDate = true # make false if dont want to show date for evergeen articles
+    math = false # best to enable this in the front matter of a page
+    githubLink = ""
+
+    tagsInHome = 40     # set zero to not show in home page
+    sectionsInHome = 5  # set zero to not show in home page
+    paginatePostsPerPage = 5
+    paginateTagsPerPage = 6
+
+[taxonomies]
+    tag = "tags"
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "blog"
+        name = "This Blog"
+        weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Tags"
+                url = "/tags/"
+                weight = 1
+            [[menu.main]]
+                parent = "blog"
+                name = "All Sections"
+                url = "/sections/"
+                weight = 2
+            [[menu.main]]
+                parent = "blog"
+                name = "All Posts"
+                url = "/posts/"
+                weight = 3
+    
+    [[menu.main]]
+        name = "Author"
+        url = "/authorr/"
+        weight = 3
